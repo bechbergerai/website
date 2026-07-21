@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bechberger Consulting LLC | Enterprise Graph & AI Advisory</title>
+    <title>Bechberger AI | Data, Knowledge Graph & GenAI Strategy Advisory</title>
+    <meta name="description" content="Independent strategic advisory for enterprise leaders building GenAI and knowledge graph initiatives on solid data foundations.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4ed8'/%3E%3Ctext x='32' y='45' font-family='Arial, Helvetica, sans-serif' font-size='36' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
     <style>
         :root {
-            --bg-main: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --border: #334155;
+            --bg-main: #ffffff;
+            --bg-alt: #f5f7fa;
+            --bg-card: #ffffff;
+            --text-main: #101828;
+            --text-muted: #475467;
+            --accent: #1d4ed8;
+            --accent-soft: rgba(29, 78, 216, 0.08);
+            --border: #e4e7ec;
         }
 
         * {
@@ -20,46 +24,95 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
-            line-height: 1.6;
-            padding: 0 20px;
+            line-height: 1.65;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1040px;
             margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        a {
+            color: var(--accent);
         }
 
         /* Header */
         header {
-            padding: 40px 0;
             border-bottom: 1px solid var(--border);
+        }
+
+        header .container {
+            padding-top: 24px;
+            padding-bottom: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             letter-spacing: -0.5px;
+            color: var(--text-main);
+            text-decoration: none;
         }
 
         .logo span {
             color: var(--accent);
         }
 
-        /* Hero Section */
+        nav {
+            display: flex;
+            gap: 28px;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        section {
+            padding: 88px 0;
+        }
+
+        section.alt {
+            background-color: var(--bg-alt);
+        }
+
+        section + section {
+            border-top: 1px solid var(--border);
+        }
+
+        h1, h2, h3 {
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero */
         .hero {
-            padding: 80px 0;
             text-align: center;
+            padding-top: 96px;
+            padding-bottom: 96px;
         }
 
         .badge {
-            background-color: rgba(56, 189, 248, 0.1);
+            background-color: var(--accent-soft);
             color: var(--accent);
             padding: 6px 16px;
             border-radius: 50px;
@@ -67,80 +120,66 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 24px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        h1 {
+        .hero h1 {
             font-size: 2.75rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            margin-bottom: 22px;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 640px;
             margin: 0 auto 40px auto;
         }
 
         .btn {
             background-color: var(--accent);
-            color: var(--bg-main);
+            color: #ffffff;
             padding: 14px 28px;
             border-radius: 6px;
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
             transition: opacity 0.2s;
+            border: 1px solid var(--accent);
         }
 
         .btn:hover {
             opacity: 0.9;
         }
 
-        /* Profile Section */
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            align-items: center;
+        .btn-outline {
+            background: none;
+            color: var(--accent);
         }
 
-        .book-placeholder {
-            background-color: var(--bg-card);
-            border: 2px dashed var(--border);
-            border-radius: 8px;
-            aspect-ratio: 3/4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            color: var(--text-muted);
-        }
-
-        .book-title {
-            color: var(--text-main);
-            font-weight: 700;
-            margin-top: 10px;
+        /* Problem / narrative sections */
+        .narrow {
+            max-width: 720px;
         }
 
         h2 {
-            font-size: 1.75rem;
+            font-size: 1.85rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            color: var(--text-muted);
             margin-bottom: 16px;
         }
 
-        /* Offerings Grid */
-        .offerings {
-            padding: 80px 0;
+        section p:last-child {
+            margin-bottom: 0;
         }
 
+        /* Offerings grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -159,20 +198,19 @@
         }
 
         .card h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 12px;
-            color: var(--accent);
+            color: var(--text-main);
         }
 
         .card p {
-            color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .card ul {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 26px;
         }
 
         .card li {
@@ -180,7 +218,7 @@
             margin-bottom: 8px;
             color: var(--text-main);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .card li::before {
@@ -190,110 +228,218 @@
             font-weight: bold;
         }
 
+        .card .btn {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* Fit section */
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .fit-col h3 {
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+        }
+
+        .fit-col.yes h3 {
+            color: #067647;
+        }
+
+        .fit-col.no h3 {
+            color: #b42318;
+        }
+
+        .fit-col ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .fit-col li {
+            margin-bottom: 10px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .fit-col.yes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #067647;
+            font-weight: bold;
+        }
+
+        .fit-col.no li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #b42318;
+            font-weight: bold;
+        }
+
         /* Footer / CTA */
         footer {
-            padding: 60px 0;
             text-align: center;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            padding: 88px 0 48px 0;
         }
 
         footer h2 {
-            color: var(--text-main);
+            margin-bottom: 14px;
+        }
+
+        footer .subtitle {
+            margin-bottom: 36px;
+        }
+
+        .footer-meta {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
-            .profile-grid {
+            .fit-grid {
                 grid-template-columns: 1fr;
             }
-            h1 {
+            .hero h1 {
                 font-size: 2rem;
+            }
+            section {
+                padding: 56px 0;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="logo">Bechberger<span>AI</span></div>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">Strategy & Advisory</div>
-        </header>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Bechberger<span>AI</span></a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#fit">Who It's For</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <section class="hero">
-            <div class="badge">Deterministic Context Architecture</div>
-            <h1>Architecting the Relationship-Aware Data Fabric for Enterprise AI</h1>
-            <p class="subtitle">High-level strategic advisory, ontological design, and GraphRAG blueprints for organizations outgrowing standard vector search.</p>
-            <a href="mailto:dave@bechberger.com" class="btn">Request a Strategic Scoping Call</a>
-        </section>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">Data · Knowledge Graphs · GenAI Strategy</div>
+            <h1>Enterprise AI Is Hitting a Wall. That Wall Is Your Data.</h1>
+            <p class="subtitle">Independent strategic advisory for leaders building GenAI and knowledge graph initiatives that need to survive contact with real, messy, connected enterprise data.</p>
+            <a href="mailto:info@bechberger.ai?subject=Strategy%20Call%20Inquiry" class="btn">Request a Strategy Call</a>
+        </div>
+    </section>
 
-        <section class="profile-grid">
-            <div class="book-placeholder">
-                <div style="font-size: 2rem;">📖</div>
-                <div class="book-title">Graph Databases<br>in Action</div>
-                <div style="font-size: 0.8rem; margin-top: 5px;">Manning Publications</div>
-            </div>
-            <div>
-                <h2>Enterprise AI Is Hitting the "Vector Wall"</h2>
-                <p style="margin-bottom: 16px; color: var(--text-muted);">Standard proximity-based semantic search workflows routines fall flat when confronted with multi-layered corporate logic, regulatory compliance rules, or deeply connected silos. Moving into production-grade agent workflows requires deterministic, relation-aware structure.</p>
-                <p style="color: var(--text-muted);">Led by Dave Bechberger—co-author of <em>Graph Databases in Action</em> and former AWS Graph Database Architect—Bechberger Consulting LLC helps tech executives define robust corporate knowledge fabrics, navigate complex schema ontologies, and lock down system scaling guardrails before a single line of high-risk code is committed.</p>
-            </div>
-        </section>
+    <section class="alt">
+        <div class="container narrow">
+            <h2>Most GenAI Projects Don't Fail on the Model. They Fail on the Foundation.</h2>
+            <p>At the root of this is a data problem. The relationships that matter are only as good as the data infrastructure surfacing them: how it's modeled, integrated, and governed across the systems it spans. Without that foundation, even the right architecture has nothing solid to stand on.</p>
+            <p>Standard vector search and off-the-shelf RAG pipelines work well for simple lookup tasks. They fall apart when they meet the way real enterprises actually work: multi-hop relationships, regulatory constraints, and knowledge that lives in the connections between systems, not inside any single document.</p>
+            <p>Getting from a promising demo to a production system that leadership can trust requires treating your data and knowledge architecture as seriously as the model itself, well before the first line of code is committed.</p>
+        </div>
+    </section>
 
-        <section class="offerings">
+    <section id="about">
+        <div class="container narrow">
+            <h2>Grounded in Two Decades of Data Architecture</h2>
+            <p>Bechberger AI is led by Dave Bechberger, who has spent over 20 years designing and building complex, distributed data architectures at companies including AWS, DataStax, and Stitch Fix. Over the last decade, that work has focused specifically on graph databases and knowledge graph architecture, and most recently, on real-world applications at the intersection of graphs and GenAI, across industries ranging from bioinformatics and supply chain to fraud detection and energy, as well as advising clients across many other domains.</p>
+            <p>He is the co-author of <em><a href="https://www.manning.com/books/graph-databases-in-action?a_aid=bechberger">Graph Databases in Action</a></em> (Manning Publications), a regular speaker at industry conferences on graph technology, and certified across the major graph database platforms. Today, that foundation is applied to a newer problem: helping organizations build GenAI and agentic systems that are grounded in real, connected enterprise knowledge, not just vector similarity.</p>
+        </div>
+    </section>
+
+    <section class="alt" id="services">
+        <div class="container">
             <h2 style="text-align: center;">Strategic Engagement Models</h2>
-            <p style="text-align: center; color: var(--text-muted);">Strictly vendor-agnostic architecture architecture oversight. Zero deployment implementation overhead.</p>
-            
+            <p style="text-align: center; max-width: 640px; margin: 0 auto;">Vendor-agnostic architecture and strategy advisory, tailored to where you are in your GenAI journey.</p>
+
             <div class="grid">
                 <div class="card">
                     <div>
-                        <h3>1. GraphRAG Feasibility Assessment</h3>
-                        <p>A focused technical audit evaluating data estates for relationship extraction and graph capacity readiness.</p>
+                        <h3>GenAI & Knowledge Graph Readiness Assessment</h3>
+                        <p>A focused audit of your data estate and use cases to determine where graph-augmented GenAI will actually help, and where it won't.</p>
                         <ul>
-                            <li>Infrastructure gap analysis</li>
-                            <li>Conceptual domain mapping</li>
-                            <li>C-suite business validation case</li>
+                            <li>Data and knowledge landscape review</li>
+                            <li>Use-case prioritization</li>
+                            <li>Executive-ready findings and roadmap</li>
                         </ul>
                     </div>
-                    <a href="mailto:info@bechberger.ai" class="btn" style="text-align: center; background: none; border: 1px solid var(--accent); color: var(--accent);">Inquire Strategy Stage</a>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>2. Enterprise Architecture Blueprint</h3>
-                        <p>End-to-end logical system topologies and schema ontologies handed cleanly to internal dev delivery teams.</p>
+                        <h3>Knowledge Graph & GenAI Architecture Design</h3>
+                        <p>End-to-end architecture and schema design for graph-backed GenAI systems, handed off cleanly to your engineering team.</p>
                         <ul>
-                            <li>Target production ontology</li>
-                            <li>Orchestration stack design</li>
-                            <li>Objective vendor metrics evaluation</li>
+                            <li>Target-state architecture</li>
+                            <li>Ontology and schema design</li>
+                            <li>Vendor-agnostic technology evaluation</li>
                         </ul>
                     </div>
-                    <a href="mailto:info@bechberger.com" class="btn" style="text-align: center;">Inquire Architecture Stage</a>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>3. Strategic Advisory Retainer</h3>
-                        <p>Continuous executive tech insurance. Design reviews and bottleneck prevention as your developers build.</p>
+                        <h3>Ongoing Strategic Advisory</h3>
+                        <p>Continuing architectural oversight as your team builds, catching costly missteps before they ship.</p>
                         <ul>
-                            <li>Bi-weekly architecture reviews</li>
-                            <li>Asynchronous design vetting</li>
-                            <li>Anti-pattern / cloud bill insulation</li>
+                            <li>Recurring design reviews</li>
+                            <li>On-demand architecture guidance</li>
+                            <li>Risk and anti-pattern flagging</li>
                         </ul>
                     </div>
-                    <a href="mailto:info@bechberger.com" class="btn" style="text-align: center; background: none; border: 1px solid var(--accent); color: var(--accent);">Inquire Advisory Stage</a>
                 </div>
             </div>
-        </section>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="mailto:info@bechberger.ai?subject=Engagement%20Inquiry" class="btn">Inquire About an Engagement</a>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <h2>Let's Protect Your Enterprise AI Budget</h2>
-            <p style="margin: 10px 0 30px 0;">Avoid ontological debt and infrastructure scaling bottlenecks before they execute.</p>
-            <p>© 2026 Bechberger.ai, All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 5px;">info@bechberger.ai</p>
-        </footer>
-    </div>
+    <section id="fit">
+        <div class="container narrow" style="max-width: 800px;">
+            <h2 style="text-align: center;">Who This Works Best For</h2>
+            <p style="text-align: center;">A quick gut-check before you reach out.</p>
+            <div class="fit-grid">
+                <div class="fit-col yes">
+                    <h3>You're in the right place if:</h3>
+                    <ul>
+                        <li>You're navigating a GenAI initiative that has to hold up against real, messy, interconnected enterprise data</li>
+                        <li>You want an outside, vendor-neutral perspective rather than a pitch from whoever is selling the platform</li>
+                        <li>You value hands-on architectural depth over a generic playbook</li>
+                    </ul>
+                </div>
+                <div class="fit-col no">
+                    <h3>Probably not a match if:</h3>
+                    <ul>
+                        <li>Your use case is a straightforward model API call with no real data complexity behind it</li>
+                        <li>Price is the deciding factor rather than depth of experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="alt" id="contact">
+        <div class="container">
+            <h2>Let's Make Sure Your GenAI Investment Actually Works</h2>
+            <p class="subtitle">Start with a short call to talk through where you are and whether this is the right fit.</p>
+            <a href="mailto:info@bechberger.ai?subject=Strategy%20Call%20Inquiry" class="btn">Request a Strategy Call</a>
+            <div class="footer-meta">
+                <p>© 2026 Bechberger AI. All rights reserved.</p>
+                <p style="margin-top: 4px;">info@bechberger.ai</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
