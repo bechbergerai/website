@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bechberger Consulting LLC | Enterprise Graph & AI Advisory</title>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 24px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: var(--bg-main);
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .book-placeholder {
+            background-color: var(--bg-card);
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            aspect-ratio: 3/4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+        }
+
+        .book-title {
+            color: var(--text-main);
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+        }
+
+        /* Offerings Grid */
+        .offerings {
+            padding: 80px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .card li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+        }
+
+        .card li::before {
+            content: "✓";
+            color: var(--accent);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Footer / CTA */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer h2 {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">Bechberger<span>AI</span></div>
+            <div style="color: var(--text-muted); font-size: 0.9rem;">Strategy & Advisory</div>
+        </header>
+
+        <section class="hero">
+            <div class="badge">Deterministic Context Architecture</div>
+            <h1>Architecting the Relationship-Aware Data Fabric for Enterprise AI</h1>
+            <p class="subtitle">High-level strategic advisory, ontological design, and GraphRAG blueprints for organizations outgrowing standard vector search.</p>
+            <a href="mailto:dave@bechberger.com" class="btn">Request a Strategic Scoping Call</a>
+        </section>
+
+        <section class="profile-grid">
+            <div class="book-placeholder">
+                <div style="font-size: 2rem;">📖</div>
+                <div class="book-title">Graph Databases<br>in Action</div>
+                <div style="font-size: 0.8rem; margin-top: 5px;">Manning Publications</div>
+            </div>
+            <div>
+                <h2>Enterprise AI Is Hitting the "Vector Wall"</h2>
+                <p style="margin-bottom: 16px; color: var(--text-muted);">Standard proximity-based semantic search workflows routines fall flat when confronted with multi-layered corporate logic, regulatory compliance rules, or deeply connected silos. Moving into production-grade agent workflows requires deterministic, relation-aware structure.</p>
+                <p style="color: var(--text-muted);">Led by Dave Bechberger—co-author of <em>Graph Databases in Action</em> and former AWS Graph Database Architect—Bechberger Consulting LLC helps tech executives define robust corporate knowledge fabrics, navigate complex schema ontologies, and lock down system scaling guardrails before a single line of high-risk code is committed.</p>
+            </div>
+        </section>
+
+        <section class="offerings">
+            <h2 style="text-align: center;">Strategic Engagement Models</h2>
+            <p style="text-align: center; color: var(--text-muted);">Strictly vendor-agnostic architecture architecture oversight. Zero deployment implementation overhead.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <h3>1. GraphRAG Feasibility Assessment</h3>
+                        <p>A focused technical audit evaluating data estates for relationship extraction and graph capacity readiness.</p>
+                        <ul>
+                            <li>Infrastructure gap analysis</li>
+                            <li>Conceptual domain mapping</li>
+                            <li>C-suite business validation case</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:info@bechberger.ai" class="btn" style="text-align: center; background: none; border: 1px solid var(--accent); color: var(--accent);">Inquire Strategy Stage</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>2. Enterprise Architecture Blueprint</h3>
+                        <p>End-to-end logical system topologies and schema ontologies handed cleanly to internal dev delivery teams.</p>
+                        <ul>
+                            <li>Target production ontology</li>
+                            <li>Orchestration stack design</li>
+                            <li>Objective vendor metrics evaluation</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:info@bechberger.com" class="btn" style="text-align: center;">Inquire Architecture Stage</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>3. Strategic Advisory Retainer</h3>
+                        <p>Continuous executive tech insurance. Design reviews and bottleneck prevention as your developers build.</p>
+                        <ul>
+                            <li>Bi-weekly architecture reviews</li>
+                            <li>Asynchronous design vetting</li>
+                            <li>Anti-pattern / cloud bill insulation</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:info@bechberger.com" class="btn" style="text-align: center; background: none; border: 1px solid var(--accent); color: var(--accent);">Inquire Advisory Stage</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h2>Let's Protect Your Enterprise AI Budget</h2>
+            <p style="margin: 10px 0 30px 0;">Avoid ontological debt and infrastructure scaling bottlenecks before they execute.</p>
+            <p>© 2026 Bechberger.ai, All rights reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">info@bechberger.ai</p>
+        </footer>
+    </div>
+
+</body>
+</html>
